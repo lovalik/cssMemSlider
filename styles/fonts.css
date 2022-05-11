@@ -1,0 +1,34 @@
+@font-face {
+    font-family: 'Luckiest Guy';
+    src: local( 'Luckiest Guy' ),
+         url( "../assets/fonts/Luckiest_Guy/LuckiestGuy-Regular.ttf") format('truetype'); 
+    font-style: normal;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Blank Idea';
+    src: local( 'Blank Idea' ),
+         url( "../assets/fonts/blank-idea/Blank-Idea.ttf") format('truetype'); 
+    font-style: normal;
+    font-weight: 400;
+}
+
+/*
+=============================
+        scrollbar
+=============================
+*/
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+  
+::-webkit-scrollbar-thumb {
+    border-radius: 3px;
+    background: #ababab;
+}
+
+::-webkit-scrollbar-thumb:horizontal {
+    background: #ababab;
+}

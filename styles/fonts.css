@@ -1,3 +1,7 @@
+:root {
+    --root-font-size: 16px;
+}
+
 @font-face {
     font-family: 'Luckiest Guy';
     src: local( 'Luckiest Guy' ),

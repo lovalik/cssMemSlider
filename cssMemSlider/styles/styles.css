@@ -1,0 +1,539 @@
+@import url('./fonts.css');
+
+/* git commit -m "init: start cssMemSlider-task `LANG=en_EN date +'(%a, %b %d, %Y %r)'`" */
+
+html {
+    font-size: var(--root-font-size);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Luckiest Guy', 'Blank Idea', 'Arial', sans-serif;
+    color:#ffffff;
+    text-transform: uppercase;
+    letter-spacing: 0.03rem;
+    background-color: #000000;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 20rem;
+    min-height: 100vh;
+    margin: 0 auto;
+}
+
+.frame {
+    padding: 0.5rem;
+    background-color: #d1d1dc;
+    border: solid 0.06rem #a9a8a8;
+    border-radius: 1rem;
+    box-shadow: 0.5rem 0.5rem 1rem black;
+}
+
+.wrapper {
+    position: relative;
+    z-index: 0;
+    display: flex;
+    flex-wrap: wrap;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    min-height: auto;
+    border: solid 0.06rem #ffffff;
+    border-radius: 1rem;
+    background-color: #000000;
+}
+
+.slider {
+    order: 2;
+    min-width: 100%;
+    background-color: #181616;
+    background-image: url('../assets/images/mozilla-firefox-1.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 40%;
+    overflow: hidden;
+    box-shadow: inset 0 0 1rem #747474;
+}
+
+.descriptions_part1 {
+    position: relative;
+    order: 1;
+    width: 100%;
+    overflow: hidden;
+    background-color: transparent;
+}
+
+.descriptions_part1 > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin-left: -200%;
+}
+
+.descriptions_part2 {
+    position: relative;
+    overflow: hidden;
+    background-color: transparent;
+}
+
+input {
+    position: relative;
+    z-index: 1;
+    opacity: 0;
+}
+
+input:hover {
+    cursor: pointer;
+}
+
+.slider-image {
+    margin-left: -200%;
+    overflow: hidden;
+    text-align: center;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.description {
+    width: 100%;
+    margin-left: -200%;
+    text-align: left;
+}
+
+.radio-button-for-slide1:hover ~ .pseudo-radio-buttons-wrapper .pseudo-radio-button1,
+.radio-button-for-slide2:hover ~ .pseudo-radio-buttons-wrapper .pseudo-radio-button2,
+.radio-button-for-slide3:hover ~ .pseudo-radio-buttons-wrapper .pseudo-radio-button3,
+.radio-button-for-slide4:hover ~ .pseudo-radio-buttons-wrapper .pseudo-radio-button4,
+.radio-button-for-slide5:hover ~ .pseudo-radio-buttons-wrapper .pseudo-radio-button5 {
+    background-color: #ffffff;
+}
+
+.radio-button-for-slide1:checked ~ .slider > *,
+.radio-button-for-slide2:checked ~ .slider > *,
+.radio-button-for-slide3:checked ~ .slider > *,
+.radio-button-for-slide4:checked ~ .slider > *,
+.radio-button-for-slide5:checked ~ .slider > * {
+    width: 0;
+    height: 0;
+}
+
+.radio-button-for-slide1:checked ~ .descriptions_part1 > *,
+.radio-button-for-slide2:checked ~ .descriptions_part1 > *,
+.radio-button-for-slide3:checked ~ .descriptions_part1 > *,
+.radio-button-for-slide4:checked ~ .descriptions_part1 > *,
+.radio-button-for-slide5:checked ~ .descriptions_part1 > * {
+    font-size: 0;
+}
+
+.radio-button-for-slide1:checked ~ .descriptions_part2 > *,
+.radio-button-for-slide2:checked ~ .descriptions_part2 > *,
+.radio-button-for-slide3:checked ~ .descriptions_part2 > *,
+.radio-button-for-slide4:checked ~ .descriptions_part2 > *,
+.radio-button-for-slide5:checked ~ .descriptions_part2 > * {
+    font-size: 0;
+}
+
+.radio-button-for-slide1:checked ~ .pseudo-radio-buttons-wrapper > .pseudo-radio-buttons .pseudo-radio-button1,
+.radio-button-for-slide2:checked ~ .pseudo-radio-buttons-wrapper > .pseudo-radio-buttons .pseudo-radio-button2,
+.radio-button-for-slide3:checked ~ .pseudo-radio-buttons-wrapper > .pseudo-radio-buttons .pseudo-radio-button3,
+.radio-button-for-slide4:checked ~ .pseudo-radio-buttons-wrapper > .pseudo-radio-buttons .pseudo-radio-button4,
+.radio-button-for-slide5:checked ~ .pseudo-radio-buttons-wrapper > .pseudo-radio-buttons .pseudo-radio-button5 {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    background-color: #06386c;
+    border: solid 0.25rem #de5c01;
+
+}
+
+.radio-button-for-slide1:hover ~ .pseudo-radio-buttons-wrapper > .pseudo-radio-buttons > .pseudo-radio-button1,
+.radio-button-for-slide2:hover ~ .pseudo-radio-buttons-wrapper > .pseudo-radio-buttons > .pseudo-radio-button2,
+.radio-button-for-slide3:hover ~ .pseudo-radio-buttons-wrapper > .pseudo-radio-buttons > .pseudo-radio-button3,
+.radio-button-for-slide4:hover ~ .pseudo-radio-buttons-wrapper > .pseudo-radio-buttons > .pseudo-radio-button4,
+.radio-button-for-slide5:hover ~ .pseudo-radio-buttons-wrapper > .pseudo-radio-buttons > .pseudo-radio-button5 {
+    border-color: #ffffff;
+}
+
+.radio-button-for-slide1:active ~ .pseudo-radio-buttons-wrapper > .pseudo-radio-buttons > .pseudo-radio-button1,
+.radio-button-for-slide2:active ~ .pseudo-radio-buttons-wrapper > .pseudo-radio-buttons > .pseudo-radio-button2,
+.radio-button-for-slide3:active ~ .pseudo-radio-buttons-wrapper > .pseudo-radio-buttons > .pseudo-radio-button3,
+.radio-button-for-slide4:active ~ .pseudo-radio-buttons-wrapper > .pseudo-radio-buttons > .pseudo-radio-button4,
+.radio-button-for-slide5:active ~ .pseudo-radio-buttons-wrapper > .pseudo-radio-buttons > .pseudo-radio-button5 {
+    background-image: url('../assets/images/mozilla-firefox-1.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    border: none;
+}
+
+.radio-button-for-slide1:checked ~ .slider > .slide1,
+.radio-button-for-slide2:checked ~ .slider > .slide2,
+.radio-button-for-slide3:checked ~ .slider > .slide3,
+.radio-button-for-slide4:checked ~ .slider > .slide4,
+.radio-button-for-slide5:checked ~ .slider > .slide5 {
+    width: 100%;
+    height: auto;
+    transition: margin-left 500ms;
+    margin-left: 0;
+}
+
+.pseudo-radio-buttons-wrapper {
+    position: relative;
+    z-index: -1;
+    display: flex;
+    width: 100%;
+    align-self: flex-start;
+    justify-content: flex-end;
+}
+
+.pseudo-radio-buttons {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+.pseudo-button {
+    background-color: #de5c01;
+    border-radius: 50%;
+}
+/*
+===========================================
+               media queries
+===========================================
+*/
+@media screen and (min-width: 1280px) {
+    .wrapper {
+        width: 80rem;
+        padding: 3rem;
+    }
+
+    .slider {
+        margin: 2rem 0;
+        font-size: 0;
+        border-radius: 1rem;
+    }
+
+    input {
+        width: 4.5rem;
+        height: 4.5rem;
+        margin: 0 auto;
+    }
+
+    .descriptions_part1 {
+        height: 7.5rem;
+    }
+
+    .radio-button-for-slide1:checked ~ .descriptions_part1 > .description-for-slide1_part1,
+    .radio-button-for-slide2:checked ~ .descriptions_part1 > .description-for-slide2_part1,
+    .radio-button-for-slide3:checked ~ .descriptions_part1 > .description-for-slide3_part1,
+    .radio-button-for-slide4:checked ~ .descriptions_part1 > .description-for-slide4_part1,
+    .radio-button-for-slide5:checked ~ .descriptions_part1 > .description-for-slide5_part1 {
+        height: 100%;
+        font-size: 3rem;
+        transition:  margin-left 500ms;
+        margin-left: 0;
+    }
+
+    .radio-button-for-slide1:checked ~ .descriptions_part2 > .description-for-slide1,
+    .radio-button-for-slide2:checked ~ .descriptions_part2 > .description-for-slide2,
+    .radio-button-for-slide3:checked ~ .descriptions_part2 > .description-for-slide3,
+    .radio-button-for-slide4:checked ~ .descriptions_part2 > .description-for-slide4,
+    .radio-button-for-slide5:checked ~ .descriptions_part2 > .description-for-slide5 {
+        height: 100%;
+        padding-top: 0.5rem;
+        font-size: 3rem;
+        transition: margin-left 500ms;
+        margin-left: 0;
+        text-align: left;
+    }
+
+    .descriptions_part2 {
+        order: 3;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        width: 60%;
+        height: 8rem;
+    }
+
+    .radio-button-for-slide1 {
+        order: 4;
+        margin: 0 auto;
+    }
+    
+    .radio-button-for-slide2 {
+        order: 5;
+    }
+    
+    .radio-button-for-slide3 {
+        order: 6;
+    }
+    
+    .radio-button-for-slide4 {
+        order: 7;
+    }
+    
+    .radio-button-for-slide5 {
+        order: 8;
+    }
+
+    .pseudo-radio-buttons-wrapper {
+        order: 9;
+    }
+
+    .pseudo-radio-buttons {
+        margin-top: -8rem;
+        width: 40%;
+        height: 8rem;
+    }
+
+    .pseudo-button {
+        width: 2rem;
+        height: 2rem;
+        margin-top: 1.2rem;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1279px) {
+    .wrapper {
+        min-width: 20rem;
+        padding: 2rem;
+    }
+
+    .slider {
+        margin: 2rem 0;
+        font-size: 0;
+        border-radius: 1rem;
+    }
+
+    input {
+        width: 3.5rem;
+        height: 3.5rem;
+        margin: 0 auto;
+    }
+
+    .descriptions_part1 {
+        height: 6.5rem;
+    }
+
+    .descriptions_part2 {
+        order: 3;
+        width: 55%;
+        height: 9.5rem;
+    }
+
+    .radio-button-for-slide1:checked ~ .descriptions_part1 > .description-for-slide1_part1,
+    .radio-button-for-slide2:checked ~ .descriptions_part1 > .description-for-slide2_part1,
+    .radio-button-for-slide3:checked ~ .descriptions_part1 > .description-for-slide3_part1,
+    .radio-button-for-slide4:checked ~ .descriptions_part1 > .description-for-slide4_part1,
+    .radio-button-for-slide5:checked ~ .descriptions_part1 > .description-for-slide5_part1 {
+        height: 100%;
+        font-size: 2.5rem;
+        transition:  margin-left 500ms;
+        margin-left: 0;
+    }
+
+    .radio-button-for-slide1:checked ~ .descriptions_part2 > .description-for-slide1,
+    .radio-button-for-slide2:checked ~ .descriptions_part2 > .description-for-slide2,
+    .radio-button-for-slide3:checked ~ .descriptions_part2 > .description-for-slide3,
+    .radio-button-for-slide4:checked ~ .descriptions_part2 > .description-for-slide4,
+    .radio-button-for-slide5:checked ~ .descriptions_part2 > .description-for-slide5 {
+        height: 100%;
+        padding-top: 0.5rem;
+        font-size: 2.5rem;
+        transition:  margin-left 500ms;
+        margin-left: 0;
+        text-align: left;
+    }
+
+    .radio-button-for-slide1 {
+        order: 4;
+        margin: 0 auto;
+    }
+    
+    .radio-button-for-slide2 {
+        order: 5;
+    }
+    
+    .radio-button-for-slide3 {
+        order: 6;
+    }
+    
+    .radio-button-for-slide4 {
+        order: 7;
+    }
+    
+    .radio-button-for-slide5 {
+        order: 8;
+    }
+
+    .pseudo-radio-buttons-wrapper {
+        order: 9;
+    }
+
+    .pseudo-radio-buttons {
+        margin-top: -9.5rem;
+        width: 45%;
+        height: 9.5rem;
+    }
+
+    .pseudo-button {
+        width: 1.5rem;
+        height: 1.5rem;
+        margin-top: 1rem;
+    }
+}
+
+@media screen and (min-width: 440px) and (max-width: 767px) {
+    .radio-button-for-slide1:checked ~ .descriptions_part1 > .description-for-slide1_part1,
+    .radio-button-for-slide2:checked ~ .descriptions_part1 > .description-for-slide2_part1,
+    .radio-button-for-slide3:checked ~ .descriptions_part1 > .description-for-slide3_part1,
+    .radio-button-for-slide4:checked ~ .descriptions_part1 > .description-for-slide4_part1,
+    .radio-button-for-slide5:checked ~ .descriptions_part1 > .description-for-slide5_part1 {
+        font-size: 2rem;
+    }
+
+    .radio-button-for-slide1:checked ~ .descriptions_part2 > .description-for-slide1,
+    .radio-button-for-slide2:checked ~ .descriptions_part2 > .description-for-slide2,
+    .radio-button-for-slide3:checked ~ .descriptions_part2 > .description-for-slide3,
+    .radio-button-for-slide4:checked ~ .descriptions_part2 > .description-for-slide4,
+    .radio-button-for-slide5:checked ~ .descriptions_part2 > .description-for-slide5 {
+        font-size: 2rem;
+    }
+
+    .descriptions_part1 {
+        height: 8.5rem;
+    }
+
+    .descriptions_part2 {
+        height: 7rem;
+    }
+}
+
+
+@media screen and (max-width: 767px) {
+    .wrapper {
+        min-width: 20rem;
+        padding: 1.5rem;
+    }
+
+    .slider {
+        margin: 1rem 0 0 0;
+        font-size: 0;
+        border-radius: 1rem;
+    }
+
+    input {
+        width: 3rem;
+        height: 5rem;
+    }
+
+    .descriptions_part2 {
+        order: 9;
+        width: 100%;
+    }
+
+    .radio-button-for-slide1:checked ~ .descriptions_part1 > .description-for-slide1_part1,
+    .radio-button-for-slide2:checked ~ .descriptions_part1 > .description-for-slide2_part1,
+    .radio-button-for-slide3:checked ~ .descriptions_part1 > .description-for-slide3_part1,
+    .radio-button-for-slide4:checked ~ .descriptions_part1 > .description-for-slide4_part1,
+    .radio-button-for-slide5:checked ~ .descriptions_part1 > .description-for-slide5_part1 {
+        height: 100%;
+        transition:  margin-left 500ms;
+        margin-left: 0;
+    }
+
+    .radio-button-for-slide1:checked ~ .descriptions_part2 > .description-for-slide1,
+    .radio-button-for-slide2:checked ~ .descriptions_part2 > .description-for-slide2,
+    .radio-button-for-slide3:checked ~ .descriptions_part2 > .description-for-slide3,
+    .radio-button-for-slide4:checked ~ .descriptions_part2 > .description-for-slide4,
+    .radio-button-for-slide5:checked ~ .descriptions_part2 > .description-for-slide5 {
+        height: 100%;
+        transition:  margin-left 500ms;
+        margin-left: 0;
+        text-align:left;
+    }
+
+    .radio-button-for-slide1 {
+        order: 3;
+        margin: 0 0 0 auto;
+    }
+    
+    .radio-button-for-slide2 {
+        order: 4;
+        margin: 0;
+    }
+    
+    .radio-button-for-slide3 {
+        order: 5;
+        margin: 0;
+    }
+    
+    .radio-button-for-slide4 {
+        order: 6;
+        margin: 0;
+    }
+    
+    .radio-button-for-slide5 {
+        order: 7;
+        margin: 0 auto 0 0;
+    }
+
+    .pseudo-radio-buttons-wrapper {
+        order: 8;
+        width: 100%;
+    }
+
+    .pseudo-radio-buttons {
+        justify-content: center;
+        align-items: center;
+        column-gap: 1.5rem;
+        margin-top: -5rem;
+        width: 100%;
+        height: 5rem;
+    }
+
+    .pseudo-button {
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 439px) {
+
+    .radio-button-for-slide1:checked ~ .descriptions_part1 > .description-for-slide1_part1,
+    .radio-button-for-slide2:checked ~ .descriptions_part1 > .description-for-slide2_part1,
+    .radio-button-for-slide3:checked ~ .descriptions_part1 > .description-for-slide3_part1,
+    .radio-button-for-slide4:checked ~ .descriptions_part1 > .description-for-slide4_part1,
+    .radio-button-for-slide5:checked ~ .descriptions_part1 > .description-for-slide5_part1 {
+        font-size: 1.5rem;
+    }
+
+    .radio-button-for-slide1:checked ~ .descriptions_part2 > .description-for-slide1,
+    .radio-button-for-slide2:checked ~ .descriptions_part2 > .description-for-slide2,
+    .radio-button-for-slide3:checked ~ .descriptions_part2 > .description-for-slide3,
+    .radio-button-for-slide4:checked ~ .descriptions_part2 > .description-for-slide4,
+    .radio-button-for-slide5:checked ~ .descriptions_part2 > .description-for-slide5 {
+        font-size: 1.5rem;
+    }
+
+    .descriptions_part1 {
+        height: 5rem;
+    }
+
+    .descriptions_part2 {
+        height: 5rem;
+    }
+}
